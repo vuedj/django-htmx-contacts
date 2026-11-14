@@ -8,21 +8,21 @@
           hx-on:success="contact_modal.close(); this.reset();">
       {% csrf_token %}
       <div class="form-control w-full">
-        <label for="" class="label">
+        <label for="{{ form.name.id_for_label }}" class="label">
           <span class="label-text">Name</span>
         </label>
         {{ form.name }}
         {% if form.name.errors %}
-          <label for="" class="label text-error">{{ form.name.errors }}</label>
+          <label for="{{ form.name.id_for_label }}" class="label text-error">{{ form.name.errors }}</label>
         {% endif %}
       </div>
       <div class="form-control w-full">
-        <label for="" class="label">
+        <label for="{{ form.email.id_for_label }}" class="label">
           <span class="label-text">Email</span>
         </label>
         {{ form.email }}
         {% if form.email.errors %}
-          <label for="" class="label text-error">{{ form.email.errors }}</label>
+          <label for="{{ form.email.id_for_label }}" class="label text-error">{{ form.email.errors }}</label>
         {% endif %}
       </div>
       <div class="modal-action">
